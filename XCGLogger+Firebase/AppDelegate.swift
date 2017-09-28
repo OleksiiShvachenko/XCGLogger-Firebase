@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     let settingsPath = Bundle.main.path(forResource: "FirebaseSetting", ofType: "plist")!
-    let destination = FirebaseDestination(encryptionKey: "w6xXnb4FwvQEeF1R", firebaseSettingsPath: settingsPath)!
+    let encryptionParams = FirebaseDestination.EncryptionParams(key: "w6xXnb4FwvQEeF1R", iv: "0123456789012345")
+    let destination = FirebaseDestination(firebaseSettingsPath: settingsPath, encryptionParams: encryptionParams)!
     log.add(destination: destination)
     log.debug(["Device": "iPhone", "Version": 7])
     log.error("omg!")
