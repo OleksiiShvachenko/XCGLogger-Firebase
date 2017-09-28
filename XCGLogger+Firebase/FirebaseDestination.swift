@@ -24,8 +24,39 @@ extension LogDetails {
   }
 }
 
-public class FirebaseDestination: BaseDestination {
+private protocol SaveStrategy {
+  func save(logDetails: LogDetails, message: String)
+}
 
+private class SimpleFirebaseSaveStrategy: SaveStrategy {
+  private let firebaseRef: DatabaseReference
+  init(firebaseRef: DatabaseReference) {
+    self.firebaseRef = firebaseRef
+  }
+
+  func save(logDetails: LogDetails, message: String) {
+    firebaseRef.child("Logs").child(message.md5()).setValue(logDetails.json)
+  }
+}
+
+private class EncryptedFirebaseSaveStrategy: SaveStrategy {
+  private let firebaseRef: DatabaseReference
+  private let aesEncoder: AES
+  init(firebaseRef: DatabaseReference, aesEncoder: AES) {
+    self.firebaseRef = firebaseRef
+    self.aesEncoder = aesEncoder
+  }
+
+  func save(logDetails: LogDetails, message: String) {
+    let data = try! JSONSerialization.data(withJSONObject: logDetails.json, options: JSONSerialization.WritingOptions(rawValue: 0))
+    let raw = try! aesEncoder.encrypt(data)
+    let encryptedData = Data(bytes: raw)
+    firebaseRef.child("Logs").child(message.md5()).setValue(encryptedData.toHexString())
+  }
+}
+
+
+public class FirebaseDestination: BaseDestination {
   public struct EncryptionParams {
     let key: String
     let iv: String
@@ -35,9 +66,7 @@ public class FirebaseDestination: BaseDestination {
       self.iv = iv
     }
   }
-
-  private let firebaseRef: DatabaseReference
-  private let aesEncoder: AES?
+  private let saveStrategy: SaveStrategy
   /**
    Designated initialization
 
@@ -52,17 +81,16 @@ public class FirebaseDestination: BaseDestination {
     let app = FirebaseApp.app(name: "FirebaseLogs")!
     let database = Database.database(app: app)
     database.isPersistenceEnabled = true
-    firebaseRef = Database.database(app: app).reference()
+    let firebaseRef = Database.database(app: app).reference()
     //check encryption
     if let encryptionParams = encryptionParams {
       guard let aesEncoder = try? AES(key: encryptionParams.key, iv: encryptionParams.iv) else {
         return nil
       }
-      self.aesEncoder = aesEncoder
+      saveStrategy = EncryptedFirebaseSaveStrategy(firebaseRef: firebaseRef, aesEncoder: aesEncoder)
     } else {
-      self.aesEncoder = nil
+      saveStrategy = SimpleFirebaseSaveStrategy(firebaseRef: firebaseRef)
     }
-
   }
   
   public override func output(logDetails: LogDetails, message: String) {
@@ -73,19 +101,6 @@ public class FirebaseDestination: BaseDestination {
 
     self.applyFormatters(logDetails: &logDetails, message: &message)
     //store log detail
-    let logsRef = firebaseRef.child("Logs")
-    if aesEncoder != nil {
-      let encryptedDaga = encryptLogData(logDetails: logDetails)
-      logsRef.child(message.md5()).setValue(encryptedDaga)
-    } else {
-      logsRef.child(message.md5()).setValue(logDetails.json)
-    }
-  }
-
-  private func encryptLogData(logDetails: LogDetails) -> String {
-    let data = try! JSONSerialization.data(withJSONObject: logDetails.json, options: JSONSerialization.WritingOptions(rawValue: 0))
-    let raw = try! aesEncoder!.encrypt(data)
-    let encryptedData = Data(bytes: raw)
-    return encryptedData.toHexString()
+    saveStrategy.save(logDetails: logDetails, message: message)
   }
 }
