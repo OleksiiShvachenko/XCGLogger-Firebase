@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.add(destination: destination)
     log.debug(["Device": "iPhone", "Version": 7])
     log.error("omg!")
-    log.verbose("omg_1!")
     log.severe("omg_2!")
     log.info("omg_3!")
     return true
