@@ -203,12 +203,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XCGLogger+Firebase/Pods-XCGLogger+Firebase-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift-iOS/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity-iOS/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
