@@ -10,15 +10,7 @@ target 'XCGLogger+Firebase' do
   project 'XCGLogger+Firebase.xcodeproj'
 
   # Pods for XCGLogger+Firebase
-  pod 'XCGLogger', '= 5.0.1'
-  pod 'CryptoSwift', '= 0.7.0'
-  pod 'FirebaseCommunity/Database', '= 0.1.2'
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '3.0'
-        end
-    end
+  pod 'XCGLogger'
+  pod 'CryptoSwift'
+  pod 'FirebaseCommunity/Database'
 end

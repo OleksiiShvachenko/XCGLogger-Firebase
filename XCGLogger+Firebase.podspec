@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source_files  = "XCGLogger+Firebase/FirebaseDestination.swift"
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0', 'SWIFT_OPTIMIZATION_LEVEL' => '-Owholemodule', 'SWIFT_DISABLE_SAFETY_CHECKS' => 'YES', 'GCC_UNROLL_LOOPS' => 'YES'}
 
-  s.dependency "XCGLogger", "= 5.0.1"
-  s.dependency "CryptoSwift", "= 0.7.0"
-  s.dependency "FirebaseCommunity/Database", "= 0.1.2"
+  s.dependency "XCGLogger"
+  s.dependency "CryptoSwift"
+  s.dependency "FirebaseCommunity/Database"
 end

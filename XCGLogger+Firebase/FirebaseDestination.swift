@@ -49,7 +49,7 @@ private class EncryptedFirebaseSaveStrategy: SaveStrategy {
 
   func save(logDetails: LogDetails, message: String) {
     let data = try! JSONSerialization.data(withJSONObject: logDetails.json, options: JSONSerialization.WritingOptions(rawValue: 0))
-    let raw = try! aesEncoder.encrypt(data)
+    let raw = try! aesEncoder.encrypt(data.bytes)
     let encryptedData = Data(bytes: raw)
     firebaseRef.child("Logs").child(message.md5()).setValue(encryptedData.toHexString())
   }
