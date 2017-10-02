@@ -25,7 +25,7 @@
 		497BC3C71F7CEA3600BB4ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497BC3CA1F7CEA3600BB4ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		497BC3CC1F7CEA3600BB4ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		497BC3D21F7CEB2B00BB4ED5 /* FirebaseSetting.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FirebaseSetting.plist; sourceTree = "<group>"; };
+		497BC3D21F7CEB2B00BB4ED5 /* FirebaseSetting.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = FirebaseSetting.plist; path = ../LogViewer/FirebaseSetting.plist; sourceTree = "<group>"; };
 		497BC3D31F7CEB2B00BB4ED5 /* FirebaseDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDestination.swift; sourceTree = "<group>"; };
 		BFDC9B2C59F4A15C9C92EF5C /* Pods-XCGLogger+Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCGLogger+Firebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-XCGLogger+Firebase/Pods-XCGLogger+Firebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
