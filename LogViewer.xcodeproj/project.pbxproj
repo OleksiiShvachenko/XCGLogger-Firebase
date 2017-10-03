@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495CEBC41F82572A0039A345 /* FirebaseSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495CEBC31F8257240039A345 /* FirebaseSetting.plist */; };
 		497BC4271F7E86B300BB4ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC4261F7E86B300BB4ED5 /* AppDelegate.swift */; };
-		497BC4291F7E86B300BB4ED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC4281F7E86B300BB4ED5 /* ViewController.swift */; };
+		497BC4291F7E86B300BB4ED5 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC4281F7E86B300BB4ED5 /* LogsViewController.swift */; };
 		497BC42B1F7E86B300BB4ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497BC42A1F7E86B300BB4ED5 /* Assets.xcassets */; };
 		497BC42E1F7E86B300BB4ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497BC42C1F7E86B300BB4ED5 /* Main.storyboard */; };
+		497BC44B1F83A8FB006FAB0B /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC44A1F83A8FB006FAB0B /* DataProvider.swift */; };
+		497BC44D1F83C064006FAB0B /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC44C1F83C064006FAB0B /* SplitViewController.swift */; };
+		497BC4501F83C908006FAB0B /* DevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BC44F1F83C908006FAB0B /* DevicesViewController.swift */; };
 		779388028E6189A8B2AB57E3 /* Pods_LogViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74EB13812EC40E38B54768A5 /* Pods_LogViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		107F838E70A60BF689AB08ED /* Pods-LogViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogViewer/Pods-LogViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		1754A85BD76C77FFE2435155 /* Pods-LogViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogViewer/Pods-LogViewer.release.xcconfig"; sourceTree = "<group>"; };
+		495CEBC31F8257240039A345 /* FirebaseSetting.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FirebaseSetting.plist; sourceTree = "<group>"; };
 		497BC4231F7E86B300BB4ED5 /* LogViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497BC4261F7E86B300BB4ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		497BC4281F7E86B300BB4ED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		497BC4281F7E86B300BB4ED5 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		497BC42A1F7E86B300BB4ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497BC42D1F7E86B300BB4ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		497BC42F1F7E86B300BB4ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497BC4301F7E86B300BB4ED5 /* LogViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LogViewer.entitlements; sourceTree = "<group>"; };
+		497BC44A1F83A8FB006FAB0B /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		497BC44C1F83C064006FAB0B /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		497BC44F1F83C908006FAB0B /* DevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewController.swift; sourceTree = "<group>"; };
 		74EB13812EC40E38B54768A5 /* Pods_LogViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,13 +78,25 @@
 			isa = PBXGroup;
 			children = (
 				497BC4261F7E86B300BB4ED5 /* AppDelegate.swift */,
-				497BC4281F7E86B300BB4ED5 /* ViewController.swift */,
+				497BC44F1F83C908006FAB0B /* DevicesViewController.swift */,
+				497BC4281F7E86B300BB4ED5 /* LogsViewController.swift */,
+				497BC44A1F83A8FB006FAB0B /* DataProvider.swift */,
+				497BC44C1F83C064006FAB0B /* SplitViewController.swift */,
+				497BC44E1F83C072006FAB0B /* Resources */,
+			);
+			path = LogViewer;
+			sourceTree = "<group>";
+		};
+		497BC44E1F83C072006FAB0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				497BC42A1F7E86B300BB4ED5 /* Assets.xcassets */,
+				495CEBC31F8257240039A345 /* FirebaseSetting.plist */,
 				497BC42C1F7E86B300BB4ED5 /* Main.storyboard */,
 				497BC42F1F7E86B300BB4ED5 /* Info.plist */,
 				497BC4301F7E86B300BB4ED5 /* LogViewer.entitlements */,
 			);
-			path = LogViewer;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5773188C1AAA49A7CEFE7A8E /* Frameworks */ = {
@@ -149,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495CEBC41F82572A0039A345 /* FirebaseSetting.plist in Resources */,
 				497BC42B1F7E86B300BB4ED5 /* Assets.xcassets in Resources */,
 				497BC42E1F7E86B300BB4ED5 /* Main.storyboard in Resources */,
 			);
@@ -221,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497BC4291F7E86B300BB4ED5 /* ViewController.swift in Sources */,
+				497BC4291F7E86B300BB4ED5 /* LogsViewController.swift in Sources */,
+				497BC4501F83C908006FAB0B /* DevicesViewController.swift in Sources */,
 				497BC4271F7E86B300BB4ED5 /* AppDelegate.swift in Sources */,
+				497BC44B1F83A8FB006FAB0B /* DataProvider.swift in Sources */,
+				497BC44D1F83C064006FAB0B /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +379,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JE4N48DDKY;
-				INFOPLIST_FILE = LogViewer/Info.plist;
+				INFOPLIST_FILE = LogViewer/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oleksii.LogViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oleksii.XCGLogger-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -372,9 +396,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JE4N48DDKY;
-				INFOPLIST_FILE = LogViewer/Info.plist;
+				INFOPLIST_FILE = LogViewer/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oleksii.LogViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oleksii.XCGLogger-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
