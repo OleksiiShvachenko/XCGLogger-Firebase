@@ -28,6 +28,12 @@ class LogCellView: NSTableCellView {
 class LogsViewController: NSViewController {
 
   @IBOutlet weak var tableView: NSTableView!
+  var filterText: String? = nil {
+    didSet {
+      tableView.reloadData()
+    }
+  }
+
   var allLogs: [LogData] = [] {
     didSet {
       tableView.reloadData()
@@ -52,20 +58,36 @@ class LogsViewController: NSViewController {
   }
 
   func logsAccordingToSelectedFilter() -> [LogData] {
+    let textFilter = { [unowned self] (isIncluded: LogData) -> Bool in
+      let text = self.filterText ?? ""
+      guard text.count > 0 else {
+        return true
+      }
+      return isIncluded.fileName.contains(text)
+        || isIncluded.functionName.contains(text)
+        || isIncluded.message.contains(text)
+    }
     switch seletedFilter {
     case .all:
-      return allLogs
+      return allLogs.filter(textFilter)
     case .debug:
-      return allLogs.filter { $0.level == .debug }
+      return allLogs.filter { $0.level == .debug }.filter(textFilter)
     case .error:
-      return allLogs.filter { $0.level == .error }
+      return allLogs.filter { $0.level == .error }.filter(textFilter)
     case .info:
-      return allLogs.filter { $0.level == .info }
+      return allLogs.filter { $0.level == .info }.filter(textFilter)
     case .severe:
-      return allLogs.filter { $0.level == .severe }
+      return allLogs.filter { $0.level == .severe }.filter(textFilter)
     }
   }
 
+}
+
+extension LogsViewController: NSTextFieldDelegate {
+  override func controlTextDidChange(_ obj: Notification) {
+    let textField = obj.object as! NSTextField
+    filterText = textField.stringValue
+  }
 }
 
 extension LogsViewController: NSTableViewDataSource, NSTableViewDelegate {
@@ -81,7 +103,6 @@ extension LogsViewController: NSTableViewDataSource, NSTableViewDelegate {
     cell.functionLabel.stringValue = logData.functionName
     cell.messageLabel.stringValue = "Message: \(logData.message)"
     cell.dateLabel.stringValue = dateFormatter.string(from: logData.date, to: Date())!
-
     switch logData.level {
     case .debug:
       cell.severeView.fillColor = NSColor.brown
