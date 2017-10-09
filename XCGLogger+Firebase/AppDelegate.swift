@@ -11,6 +11,17 @@ import XCGLogger
 
 let log = XCGLogger.default
 
+extension Tag {
+  static let sensitive = Tag("sensitive")
+  static let ui = Tag("ui")
+  static let data = Tag("data")
+}
+
+extension Dev {
+  static let dave = Dev("dave")
+  static let sabby = Dev("sabby")
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.error("omg!")
     log.severe("omg_2!")
     log.info("omg_3!")
+    let tags = XCGLogger.Constants.userInfoKeyTags
+    log.error("some error with tag", userInfo: [tags: "iPhone X"])
+    log.debug("some error with tag", userInfo: [tags: ["iPhone X", "iPhone 8"]])
+    log.debug("A tagged log message", userInfo: Dev.dave | Tag.sensitive)
     return true
   }
 

@@ -11,6 +11,7 @@ target 'XCGLogger+Firebase' do
 
   # Pods for XCGLogger+Firebase
   pod 'XCGLogger'
+  pod 'XCGLogger/UserInfoHelpers'
   pod 'CryptoSwift'
   pod 'FirebaseCommunity/Database'
 end

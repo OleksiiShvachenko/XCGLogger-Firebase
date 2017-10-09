@@ -375,7 +375,7 @@
 			baseConfigurationReference = 107F838E70A60BF689AB08ED /* Pods-LogViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LogViewer/LogViewer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LogViewer/Resources/LogViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JE4N48DDKY;
@@ -392,7 +392,7 @@
 			baseConfigurationReference = 1754A85BD76C77FFE2435155 /* Pods-LogViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LogViewer/LogViewer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LogViewer/Resources/LogViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JE4N48DDKY;

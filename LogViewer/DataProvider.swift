@@ -40,6 +40,7 @@ struct LogData {
   let fileName: String
   let functionName: String
   let date: Date
+  let tags: [String]
 }
 
 struct ServerData {
@@ -56,7 +57,7 @@ struct ServerData {
     let deviceOS = json["deviceOS"] as! String
     let deviceName = json["deviceName"] as! String
     let deviceID = json["deviceID"] as! String
-
+    let tags = json["tags"] as! [String]
     self.deviceData = DeviceData(
       deviceOS: deviceOS,
       deviceName: deviceName,
@@ -68,7 +69,8 @@ struct ServerData {
       lineNumber: lineNumber,
       fileName: fileName,
       functionName: functionName,
-      date: date)
+      date: date,
+      tags: tags)
   }
 
   private let formatter = DateFormatter()

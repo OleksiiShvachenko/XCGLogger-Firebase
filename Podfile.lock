@@ -1,37 +1,40 @@
 PODS:
   - CryptoSwift (0.7.2)
-  - FirebaseCommunity/Core (0.1.2):
+  - FirebaseCommunity/Core (0.1.3):
     - FirebaseCommunity/Root
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCommunity/Database (0.1.2):
+  - FirebaseCommunity/Database (0.1.3):
     - FirebaseCommunity/Core
     - leveldb-library
-  - FirebaseCommunity/Root (0.1.2)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - FirebaseCommunity/Root (0.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - leveldb-library (1.18.3)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
-  - XCGLogger (6.0.0):
-    - XCGLogger/Core (= 6.0.0)
-  - XCGLogger/Core (6.0.0):
+  - XCGLogger (6.0.1):
+    - XCGLogger/Core (= 6.0.1)
+  - XCGLogger/Core (6.0.1):
     - ObjcExceptionBridging
+  - XCGLogger/UserInfoHelpers (6.0.1):
+    - XCGLogger/Core
 
 DEPENDENCIES:
   - CryptoSwift
   - FirebaseCommunity/Database
   - XCGLogger
+  - XCGLogger/UserInfoHelpers
 
 SPEC CHECKSUMS:
   CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
-  FirebaseCommunity: 2184a60d443b1f2e4bf9e26b07876bba89e4fdfc
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  FirebaseCommunity: 577bff60785dfe3fb214c8d3993477fc44286fb6
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
-  XCGLogger: 0bb32cfc1eb66f67df84cd327d75d11998747629
+  XCGLogger: b4ca980580108cfeaf221afe158f5d89c1be22e0
 
-PODFILE CHECKSUM: 016f61f206348f9bb601cbabb7c2030a10c9d3e4
+PODFILE CHECKSUM: 5de6496b2b09a24573d40c813adf318293db922d
 
 COCOAPODS: 1.3.1

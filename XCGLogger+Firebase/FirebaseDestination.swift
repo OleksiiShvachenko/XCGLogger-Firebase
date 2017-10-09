@@ -26,6 +26,17 @@ struct LogDecorator {
   }
 
   var json: [String: Any] {
+    let tagsKey = XCGLogger.Constants.userInfoKeyTags
+    let result: [String]
+    if let tags = log.userInfo[tagsKey] as? [String] {
+      result = tags
+    } else if let tags = log.userInfo[tagsKey] as? String {
+      result = [tags]
+    } else {
+      result = []
+    }
+
+
     return [
       "level": log.level.description,
       "date": formatter.string(from: log.date),
@@ -35,7 +46,8 @@ struct LogDecorator {
       "lineNumber": log.lineNumber,
       "deviceID": deviceID,
       "deviceName": deviceName,
-      "deviceOS": deviceOS
+      "deviceOS": deviceOS,
+      "tags": result
     ]
   }
 }
